@@ -9,12 +9,17 @@ import { faTimes } from '@fortawesome/free-solid-svg-icons';
 })
 export class TaskItemComponent implements OnInit {
   @Input() task = {} as Task;
+  @Output() onToggleReminder = new EventEmitter();
   @Output() onDelete = new EventEmitter();
   faTimes = faTimes;
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  onDblClick(task: Task): void {
+    this.onToggleReminder.emit(task)
   }
 
   onDeleteTask(task: Task): void {
