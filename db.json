@@ -19,10 +19,10 @@
       "reminder": false
     },
     {
-      "id": 4,
-      "text": "Test",
-      "day": "May 7th at 12:30pm",
-      "reminder": false
+      "text": "tst",
+      "day": "test",
+      "reminder": true,
+      "id": 4
     }
   ]
 }
