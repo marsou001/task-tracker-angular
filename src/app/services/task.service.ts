@@ -12,6 +12,14 @@ export class TaskService {
   constructor(private http: HttpClient) { }
 
   getTasks(): Observable<Task[]> {
-    return this.http.get<Task[]>(this.apiURL)
+    const re = this.http.get<Task[]>(this.apiURL);
+    console.log(re);
+    
+    return re;
+  }
+
+  deleteTask(task: Task): Observable<Task> {
+    const deleteUrl = `${this.apiURL}/${task.id}`;
+    return this.http.delete<Task>(deleteUrl);
   }
 }
